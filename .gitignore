@@ -1,0 +1,22 @@
+# Ignore node_modules directory
+node_modules/
+
+# Ignore log files
+logs/
+*.log
+
+# Ignore environment variables file
+.env
+
+# Ignore npm debug logs
+npm-debug.log*
+
+# Ignore .DS_Store files (Mac OS)
+.DS_Store
+
+# Ignore VS Code configuration files
+.vscode/
+
+# Ignore Heroku-specific files
+Procfile
+app.json
