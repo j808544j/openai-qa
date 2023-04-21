@@ -24,6 +24,7 @@ router.post("/", async (req, res, next) => {
     const response = await chain.call({ query: req.body.query });
     res.send(response);
   } catch (error) {
+    console.log("erroe", error);
     logger.error(error);
     next(error);
   }
