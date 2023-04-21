@@ -14,7 +14,6 @@
     "debug": "~2.6.9",
     "dotenv": "^16.0.3",
     "express": "~4.16.1",
-    "hnswlib-node": "^1.4.2",
     "http-errors": "~1.6.3",
     "jade": "~1.11.0",
     "langchain": "^0.0.59",
