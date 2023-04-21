@@ -9,6 +9,7 @@ const fs = require("fs").promises;
 const logger = require("../logger");
 
 router.post("/", async (req, res, next) => {
+  console.log(req.body.query);
   try {
     const model = new OpenAI({});
     const text = await fs.readFile("./script.txt", "utf8");
@@ -21,7 +22,9 @@ router.post("/", async (req, res, next) => {
       new OpenAIEmbeddings()
     );
     const chain = RetrievalQAChain.fromLLM(model, vectorStore.asRetriever());
-    const response = await chain.call({ query: req.body.query });
+    const response = await chain.call({
+      query: req.body.query ? req.body.query : "",
+    });
     res.send(response);
   } catch (error) {
     console.log("erroe", error);
