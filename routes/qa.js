@@ -9,7 +9,6 @@ const fs = require("fs").promises;
 const logger = require("../logger");
 
 router.post("/", async (req, res, next) => {
-  console.log(req.body.query);
   try {
     const model = new OpenAI({});
     const text = await fs.readFile("./script.txt", "utf8");
@@ -27,8 +26,7 @@ router.post("/", async (req, res, next) => {
     });
     res.send(response);
   } catch (error) {
-    console.log("erroe", error);
-    logger.error(error);
+    logger.error(error.message);
     next(error);
   }
 });
